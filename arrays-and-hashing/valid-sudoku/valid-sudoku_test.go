@@ -19,7 +19,7 @@ func TestIsValidSudoku(t *testing.T) {
 	want := true
 
 	if got != want {
-		t.Errorf("Expected output: %v, instead got: %v", want, got)
+		t.Errorf("Test1: Expected output: %v, instead got: %v", want, got)
 	}
 
 	input = [][]byte{{'8', '3', '.', '.', '7', '.', '.', '.', '.'},
@@ -39,6 +39,23 @@ func TestIsValidSudoku(t *testing.T) {
 	want = false
 
 	if got != want {
-		t.Errorf("Expected output: %v, instead got: %v", want, got)
+		t.Errorf("Test2: Expected output: %v, instead got: %v", want, got)
+	}
+
+	input = [][]byte{{'3', '3', '.', '.', '7', '.', '.', '.', '.'},
+		{'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+		{'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+		{'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+		{'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+		{'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+		{'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+		{'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+		{'.', '.', '.', '.', '8', '.', '.', '7', '9'}}
+
+	got = isValidSudoku(input)
+	want = false
+
+	if got != want {
+		t.Errorf("Test3: Expected output: %v, instead got: %v", want, got)
 	}
 }
