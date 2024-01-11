@@ -30,6 +30,7 @@ func isValidSudoku(board [][]byte) bool {
 				continue
 			}
 
+			// converts the rune literal to the corresponding intiger, subtracting one to accomodate for the starting index 0 of an array
 			n := board[i][j] - '1'
 			if col[j][n] {
 				return false
